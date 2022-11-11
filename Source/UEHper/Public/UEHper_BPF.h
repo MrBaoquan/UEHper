@@ -31,14 +31,26 @@ class UUEHper_BPF : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = "Global engine pointer. Can be 0 so don't use without checking."), Category = "UEHper")
 		static UGameViewportClient* GameViewport();
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = "移动窗口"), Category = "UEHper")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = ""), Category = "UEHper")
 		static void MoveWindow(FVector2D NewPosition);
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = "调整窗口大小"), Category = "UEHper")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = ""), Category = "UEHper")
 		static void ResizeWindow(FVector2D NewClientSize);
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = "更改应用分辨率"), Category = "UEHper")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "", Keywords = ""), Category = "UEHper")
 		static void RequestResolutionChange(int32 InResX, int32 InResY, TEnumAsByte<EWindowMode::Type> InWindowMode);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "LoadObjectByPath"), Category = "UEHper")
+		static UObject* LoadObjectByPath(UClass* BaseClass, const FString& Path);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "LoadClassByName"), Category = "UEHper")
+		static UClass* LoadClassByName(const FString& Name);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "LoadFileToString"), Category="UEHper")
+		static FString LoadFileToString(const FString& Path);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "CurrentWorld"), Category="UEHper")
+		static UWorld* CurrentWorld();
 
 
 };

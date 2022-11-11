@@ -3,3 +3,12 @@
 
 #include "PuertsExtensionMethods.h"
 
+UClass* UPuertsExtensionMethods::GetClass(UObject *Object)
+{
+    return Object->GetClass();
+}
+
+UFunction* UPuertsExtensionMethods::FindFunction(UObject *Object, FName InName)
+{
+    return Object->FindFunction(InName);
+}

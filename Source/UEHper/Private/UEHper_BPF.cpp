@@ -2,6 +2,7 @@
 
 #include "UEHper_BPF.h"
 #include "UEHper.h"
+#include "Runtime/Core/Public/Misc/FileHelper.h"
 #include "Kismet/GameplayStatics.h"
 
 UUEHper_BPF::UUEHper_BPF(const FObjectInitializer& ObjectInitializer)
@@ -29,3 +30,27 @@ void UUEHper_BPF::RequestResolutionChange(int32 InResX, int32 InResY, TEnumAsByt
 {
 	GSystemResolution.RequestResolutionChange(InResX, InResY, InWindowMode);
 }
+
+UObject* UUEHper_BPF::LoadObjectByPath(UClass* BaseClass, const FString& Path)
+{
+	return StaticLoadObject(BaseClass,NULL,*(Path));
+}
+
+UClass* UUEHper_BPF::LoadClassByName(const FString& Name)
+{
+	return FindObject<UClass>(ANY_PACKAGE,*(Name));
+}
+
+FString UUEHper_BPF::LoadFileToString(const FString& Path)
+{
+	FString _content;
+	FFileHelper::LoadFileToString(_content,*(Path));
+	return _content;
+}
+
+UWorld* UUEHper_BPF::CurrentWorld()
+{
+	return GEngine->GetWorld();
+}
+
+

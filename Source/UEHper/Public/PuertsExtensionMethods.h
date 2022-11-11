@@ -13,6 +13,11 @@
 UCLASS()
 class UEHPER_API UPuertsExtensionMethods : public UExtensionMethods
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 public:
+    UFUNCTION(BlueprintCallable, Category = "Puerts Extensions")
+        static UClass* GetClass(UObject* Object);
+
+    UFUNCTION(BlueprintCallable, Category = "Puerts Extensions")
+        static UFunction* FindFunction(UObject* Object, FName InName);
 };
