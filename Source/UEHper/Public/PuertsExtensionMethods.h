@@ -16,6 +16,9 @@ class UEHPER_API UPuertsExtensionMethods : public UExtensionMethods
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, Category = "Puerts Extensions")
+        static AActor* SpawnActor(UWorld* World, UClass* Class, const FTransform& Transform, ESpawnActorCollisionHandlingMethod SpawnCollisionHandlingOverride, AActor* Owner, APawn* Instigator);
+
+    UFUNCTION(BlueprintCallable, Category = "Puerts Extensions")
         static UClass* GetClass(UObject* Object);
 
     UFUNCTION(BlueprintCallable, Category = "Puerts Extensions")

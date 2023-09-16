@@ -13,12 +13,13 @@
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
-	"Installed": false,
+	"EnabledByDefault": true,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "UEHper",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
+			"LoadingPhase": "PreDefault",
 			"WhitelistPlatforms": [
 				"Win64"
 			]

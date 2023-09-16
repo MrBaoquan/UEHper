@@ -52,5 +52,8 @@ class UUEHper_BPF : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "CurrentWorld"), Category="UEHper")
 		static UWorld* CurrentWorld();
 
+	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "CreateWidget"), Category = "UEHper")
+	//	static UUserWidget* CreateWidget();
+
 
 };
